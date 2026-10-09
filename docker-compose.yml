@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16
+    container_name: money_manager_db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: money_manager_db
+      POSTGRES_USER: money_manager
+      POSTGRES_PASSWORD: jiggistyle
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
