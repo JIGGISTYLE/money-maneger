@@ -5,9 +5,10 @@ services:
     restart: unless-stopped
 
     environment:
-      POSTGRES_DB: money_manager_db
-      POSTGRES_USER: money_manager
-      POSTGRES_PASSWORD: jiggistyle
+      #"${}" this syntax auto read variable inside the .env
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
     ports:
       - "5432:5432"
